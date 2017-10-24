@@ -11,5 +11,5 @@ for (i in 1:n.games){
 		pbpDataf <- rbind(pbpDataf,data.frame(matrix(unlist(pbpData$g$pd[[j]]$pla), ncol=16, byrow = TRUE)))
 	}
 	colnames(pbpDataf) <- c("evt","cl","de","locX","locY","opt1","opt2","mtype","etype","opid","tid","pid","hs","vs","epid","oftid")
-	write.csv(pbpDataf,file=paste0(i,".csv"))
+	write.csv(pbpDataf,file=paste0(gsub("/","-",pbpData$g[3]$gcode),".csv"))
 }
